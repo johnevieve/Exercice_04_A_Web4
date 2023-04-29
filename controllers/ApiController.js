@@ -5,7 +5,7 @@ module.exports.index = (req, res) => {
 };
 
 module.exports.show = (req, res) => {
-    let personnage = db.find(({ id }) => id == req.query.id);
+    let personnage = db.find(({ id }) => id == req.params.id);
 
     if (personnage === undefined) {
         res.status(404).json({msg: "Personnage introuvable"});
@@ -30,7 +30,7 @@ module.exports.update = (req, res) => {
 };
 
 module.exports.delete = (req, res) => {
-    let index = db.findIndex(db => db.id == req.query.id);
+    let index = db.findIndex(db => db.id == req.params.id);
 
     if (index == -1) {
         res.status(404).json({msg: "Personnage introuvable"});

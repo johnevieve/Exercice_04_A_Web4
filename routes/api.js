@@ -3,12 +3,14 @@ const router = express.Router();
 const apiController = require('../controllers/ApiController');
 
 router.route('/personnages')
-    .get(apiController.index)
-    .post(apiController.store)
-    .put(apiController.update)
-    .delete(apiController.delete);
+    .get(apiController.index);
 
 router.route('/personnage')
-    .get(apiController.show);
+    .post(apiController.store)
+    .put(apiController.update);
+
+router.route('/personnage/:id')
+    .get(apiController.show)
+    .delete(apiController.delete);
 
 module.exports = router;
