@@ -5,6 +5,11 @@ const app = express();
 const port =  process.env.PORT;
 const helmet = require('helmet');
 const apiRouter = require('./routes/api');
+const cors = require('cors');
+
+app.use(cors({
+    origin: ['http://localhost:3000/api/', 'http://localhost:8000']
+}));  
 
 app.use(helmet({
     contentSecurityPolicy: false,

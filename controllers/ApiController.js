@@ -110,7 +110,7 @@ module.exports.delete = (req, res) => {
  */
 function bdEstVide(res)
 {
-    if (bd.length <= 0) {
+    if (db.length <= 0) {
         res.status(204).json({msg: "La liste des personnages est vide."}); // Erreur 204 No Content
     }
 }
