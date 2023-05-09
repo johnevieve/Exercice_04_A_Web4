@@ -1,56 +1,115 @@
-**Exemple d'un point d'entrée**
+**Ajout et mise à jour d'un personnage**
 ----
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  Le POST ajoute un personnage dans la base de donnée avec le nom et le nom réelle. <br />
+  Le PUT fait une recherche dans la base de donnée selon le nom envoyer pour modifier le nom réelle <br />
+  et si jamais aucun personnage n'est trouver avec le nom, alors un nouveau personnage sera ajouté.
 
 * **URL**
 
-  /personnage?name=**&realname=** <br />
-  /personnage?id2=*:id2*
+  /api/personnage?name=*:name*&realname=*:realname*
+
+  exemple : http://localhost/api/personnage?name=Batman&realname=Bruce_Wayne
   
 * **Méthodes:**
   
-  `POST` : Ajoute un personnage avec un nom et sont nom réelle | 
+  `POST` : Pour l'ajoute un personnage avec un nom et sont nom réelle. | 
 
-  `PUT` : Mise à jour du nom réelle du personnage selon le nom ou ajoute un nouveau personnage
+  `PUT` : 
+    Pour la mise à jour du nom réelle du personnage selon le nom, sinon l'ajoute
+    d'un nouveau personnage quand aucun personnage n'est trouver avec le nom.
   
 * **Paramètres d'URL:**
 
   **Requis:**
- 
-   `id=[integer]`
-   
-	**Optionnel:**
-	
-	`id2=[integer]`
-	
-* **Paramètres de données:**
 
-  **Requis:**
+    Content-Type: application/x-www-form-urlencoded
  
-   `param=[alphanumeric]`
+    `name=[string]` : Le nom du personnage
+   
+  **Optionnel:**
+
+    Content-Type: application/x-www-form-urlencoded
+	
+	  `realname=[string]` : Le nom réelle du personnage
 
 * **Réponse de succès:**
 
   * **Code:** 200 <br />
-    **Contenu:** `{ 
-    					data : {
-							...
-						}
- 					}`
+    **Contenu:** `{
+        "msg": "Modification du personnage réussie.",
+    	  "data" : {
+            "id": 1,
+            "name": "Batman", 
+            "realname": "Bruce Wayne"
+		    }, {
+            "id": 2,
+            "name": "The Penguin", 
+            "realname": "Oswald Cobblepot"
+        }, {
+            "id": 3,
+            "name": "Iron Man", 
+            "realname": "Tony Stark"
+        }, {
+            "id": 4,
+            "name": "The Hulk", 
+            "realname": "Robert Bruce Banner"
+        }
+ 	  }`
+
+  * **Code:** 201 <br />
+    **Contenu:** `{
+        "msg": "Création d'un personnage réussie.",
+    	  "data" : {
+            "id": 1,
+            "name": "Batman", 
+            "realname": "Bruce Wayne"
+		    }, {
+            "id": 2,
+            "name": "The Penguin", 
+            "realname": "Oswald Cobblepot"
+        }, {
+            "id": 3,
+            "name": "Iron Man", 
+            "realname": "Tony Stark"
+        }, {
+            "id": 4,
+            "name": "The Hulk", 
+            "realname": "Robert Bruce Banner"
+        }
+ 	  }`
  
 * **Réponses d'erreur:**
 
-  * **Code:** 400 BAD REQUEST <br />
-    **Contenu:** `{ "error": "Malformed request syntax." }`    
+  * **Code:** 204 NO CONTENT <br />
+    **Contenu:** `{ "msg": "La liste des personnages est vide." }`   
     
     OU
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Contenu:** `{ "message": "Unauthenticated." }`
+  * **Code:** 422 UNPROCESSABLE CONTENT <br />
+    **Contenu:** `{ "msg": "Le nom du personnage est requie." }`
+
+      OU
+
+    **Contenu:** `{ "msg": "Le nom et le nom réel du personnage ne doit contenir que des `
+                    `chiffres, des lettres et des espaces ou une séparation (_ ou -)." }`
     
-* **Exemple:**
- 
-        axios.post('/super-api/blablabla/1', { param: 'blabla' })
-	 	  .then(response => console.log(response))
-	 	  .catch(error => console.log(error));
+* **Exemples:**
+
+  * **POST:**
+
+        axios.post('/personnage', {
+          name: Batman,
+          realname: Bruce Wayne
+        })
+	    .then(response => console.log(response))
+	    .catch(error => console.log(error));
+
+  * **PUT:**
+
+        axios.put('/personnage', {
+          name: Batman,
+          realname: Bruce Wayne
+        })
+	    .then(response => console.log(response))
+	    .catch(error => console.log(error));
     

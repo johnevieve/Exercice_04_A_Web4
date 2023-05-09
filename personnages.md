@@ -4,9 +4,9 @@
 
 * **URL**
 
-  /personnages
+  /api/personnages
 
-  exemple : http://localhost/personnages
+  exemple : http://localhost/api/personnages
   
 * **Méthodes:**
   
@@ -17,12 +17,24 @@
   * **Code:** 200 <br />
     **Contenu:** `{
         "msg": "Récupération de la liste des personnages réussie.",
-    	"data" : {
+    	  "data" : {
             "id": 1,
             "name": "Batman", 
             "realname": "Bruce Wayne"
-		}
- 	}`
+		    }, {
+            "id": 2,
+            "name": "The Penguin", 
+            "realname": "Oswald Cobblepot"
+        }, {
+            "id": 3,
+            "name": "Iron Man", 
+            "realname": "Tony Stark"
+        }, {
+            "id": 4,
+            "name": "The Hulk", 
+            "realname": "Robert Bruce Banner"
+        }
+ 	  }`
  
 * **Réponses d'erreur:**
 
@@ -31,7 +43,7 @@
     
 * **Exemple:**
  
-    axios.post('/personnages')
+    axios.get('/personnages')
 	 	.then(response => console.log(response))
 	 	.catch(error => console.log(error));
     
