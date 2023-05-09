@@ -1,7 +1,7 @@
 **Ajout et mise à jour d'un personnage**
 ----
-  Le POST ajoute un personnage dans la base de donnée avec le nom et le nom réelle. <br />
-  Le PUT fait une recherche dans la base de donnée selon le nom envoyer pour modifier le nom réelle <br />
+  Le POST ajoute un personnage dans la base de donnée avec le nom et le nom réelle.
+  Le PUT fait une recherche dans la base de donnée selon le nom envoyer pour modifier le nom réelle
   et si jamais aucun personnage n'est trouver avec le nom, alors un nouveau personnage sera ajouté.
 
 * **URL**
@@ -9,28 +9,26 @@
   /api/personnage?name=*:name*&realname=*:realname*
 
   exemple : http://localhost/api/personnage?name=Batman&realname=Bruce_Wayne
-  
+
 * **Méthodes:**
-  
+
   `POST` : Pour l'ajoute un personnage avec un nom et sont nom réelle. | 
 
-  `PUT` : 
-    Pour la mise à jour du nom réelle du personnage selon le nom, sinon l'ajoute
-    d'un nouveau personnage quand aucun personnage n'est trouver avec le nom.
-  
+  `PUT` : Pour la mise à jour du nom réelle du personnage selon le nom, sinon l'ajoute d'un nouveau personnage quand aucun personnage n'est trouver avec le nom.
+
 * **Paramètres d'URL:**
 
   **Requis:**
 
     Content-Type: application/x-www-form-urlencoded
- 
-    `name=[string]` : Le nom du personnage
-   
+
+	`name=[alphanumeric]` : Le nom du personnage
+
   **Optionnel:**
 
     Content-Type: application/x-www-form-urlencoded
-	
-	  `realname=[string]` : Le nom réelle du personnage
+
+	 `realname=[alphanumeric]` : Le nom réelle du personnage
 
 * **Réponse de succès:**
 
@@ -90,8 +88,7 @@
 
       OU
 
-    **Contenu:** `{ "msg": "Le nom et le nom réel du personnage ne doit contenir que des `
-                    `chiffres, des lettres et des espaces ou une séparation (_ ou -)." }`
+    **Contenu:** `{ "msg": "Le nom et le nom réel du personnage ne doit contenir que des chiffres, des lettres et des espaces ou une séparation (_ ou -)." }`
     
 * **Exemples:**
 
@@ -112,4 +109,3 @@
         })
 	    .then(response => console.log(response))
 	    .catch(error => console.log(error));
-    

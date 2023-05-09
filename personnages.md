@@ -7,9 +7,9 @@
   /api/personnages
 
   exemple : http://localhost/api/personnages
-  
+
 * **Méthodes:**
-  
+
   `GET` : Pour recevoir une liste de personnages.
 
 * **Réponse de succès:**
@@ -42,8 +42,7 @@
     **Contenu:** `{ "msg": "La liste des personnages est vide." }`
     
 * **Exemple:**
- 
-    axios.get('/personnages')
+
+    	axios.get('/personnages')
 	 	.then(response => console.log(response))
 	 	.catch(error => console.log(error));
-    

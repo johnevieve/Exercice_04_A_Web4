@@ -20,11 +20,11 @@
     * **Code:** 200 <br />
     **Contenu:** `{
         "msg": "Suppression du personnage réussie.",
-    	"data" : {
+    	  "data" : {
             "id": 1,
             "name": "Batman", 
             "realname": "Bruce Wayne"
-		}, {
+		    }, {
             "id": 2,
             "name": "The Penguin", 
             "realname": "Oswald Cobblepot"
@@ -37,19 +37,19 @@
             "name": "The Hulk", 
             "realname": "Robert Bruce Banner"
         }
- 	}`
+ 	    }`
 
 * **Réponse de succès (GET):**
 
     * **Code:** 200 <br />
     **Contenu:** `{
         "msg": "Récupération d'un personnage par son ID réussie.",
-    	"data" : {
+    	  "data" : {
             "id": 1,
             "name": "Batman", 
             "realname": "Bruce Wayne"
-		}
- 	}`
+		    }
+ 	    }`
  
 * **Réponses d'erreur:**
 
