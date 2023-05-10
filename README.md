@@ -1,7 +1,11 @@
-Commandes à utilisé pour les installations nécéssaires:
+* Getting started...
+  * Install node packages: `npm install`
+  * Obtain or create a `.env` file (default: `.env.development`)
+  * Run REST API server: `npm run start`
 
-    - npm install
+* The `.env` file should at least contain the following, fill in the information required:
 
-Ensuite:
-
-    - npm install express
+```
+[API]
+PORT=3000
+```
