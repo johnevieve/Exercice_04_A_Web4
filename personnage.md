@@ -34,45 +34,47 @@
 
   * **Code:** 200 <br />
     **Contenu:** `{
-        "msg": "Modification du personnage réussie.",
-    	  "data" : {
-            "id": 1,
-            "name": "Batman", 
-            "realname": "Bruce Wayne"
+      "msg": "Modification du personnage réussie.",
+    	"data" :
+        db: {
+          "id": 1,
+          "name": "Batman", 
+          "realname": "Bruce Wayne"
 		    }, {
-            "id": 2,
-            "name": "The Penguin", 
-            "realname": "Oswald Cobblepot"
+          "id": 2,
+          "name": "The Penguin", 
+          "realname": "Oswald Cobblepot"
         }, {
-            "id": 3,
-            "name": "Iron Man", 
-            "realname": "Tony Stark"
+          "id": 3,
+          "name": "Iron Man", 
+          "realname": "Tony Stark"
         }, {
-            "id": 4,
-            "name": "The Hulk", 
-            "realname": "Robert Bruce Banner"
+          "id": 4,
+          "name": "The Hulk", 
+          "realname": "Robert Bruce Banner"
         }
  	  }`
 
   * **Code:** 201 <br />
     **Contenu:** `{
-        "msg": "Création d'un personnage réussie.",
-    	  "data" : {
-            "id": 1,
-            "name": "Batman", 
-            "realname": "Bruce Wayne"
+      "msg": "Modification du personnage réussie.",
+    	"data" :
+        db: {
+          "id": 1,
+          "name": "Batman", 
+          "realname": "Bruce Wayne"
 		    }, {
-            "id": 2,
-            "name": "The Penguin", 
-            "realname": "Oswald Cobblepot"
+          "id": 2,
+          "name": "The Penguin", 
+          "realname": "Oswald Cobblepot"
         }, {
-            "id": 3,
-            "name": "Iron Man", 
-            "realname": "Tony Stark"
+          "id": 3,
+          "name": "Iron Man", 
+          "realname": "Tony Stark"
         }, {
-            "id": 4,
-            "name": "The Hulk", 
-            "realname": "Robert Bruce Banner"
+          "id": 4,
+          "name": "The Hulk", 
+          "realname": "Robert Bruce Banner"
         }
  	  }`
  
